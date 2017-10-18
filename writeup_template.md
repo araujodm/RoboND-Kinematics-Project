@@ -8,6 +8,12 @@
 
 
 1. Set up your ROS Workspace.
+
+It was done by creating the /catkin_ws. As mentioned during the course, catkin is the official build system of ROS.
+https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/screenshot.png
+
+
+
 2. Download or clone the [project repository](https://github.com/udacity/RoboND-Kinematics-Project) into the ***src*** directory of your ROS Workspace.  
 3. Experiment with the forward_kinematics environment and get familiar with the robot.
 4. Launch in [demo mode](https://classroom.udacity.com/nanodegrees/nd209/parts/7b2fd2d7-e181-401e-977a-6158c77bf816/modules/8855de3f-2897-46c3-a805-628b5ecf045b/lessons/91d017b1-4493-4522-ad52-04a74a01094c/concepts/ae64bb91-e8c4-44c9-adbe-798e8f688193).
