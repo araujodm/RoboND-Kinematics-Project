@@ -28,6 +28,15 @@ https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/k
 
 5. Perform Kinematic Analysis for the robot following the [project rubric](https://review.udacity.com/#!/rubrics/972/view).
 
+Check out DH table here:
+https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/DH_Table.pdf
+
+Here a screenshot from the urdf file:
+https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/kuka_arm_xacro_urdf.png
+
+
+
+![alt text][https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/kuka_arm_xacro_urdf.png]
 
 
 6. Fill in the `IK_server.py` with your Inverse Kinematics code. 
