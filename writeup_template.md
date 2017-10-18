@@ -34,9 +34,35 @@ https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/D
 Here a screenshot from the urdf file:
 https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/kuka_arm_xacro_urdf.png
 
+T0_1 =  Matrix([[           cos(q),           -sin(q),           0,             a]
+                [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d]
+                [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d]
+                [                0,                 0,           0,             1]])
 
+T1_2 =  Matrix([[           cos(q),           -sin(q),           0,             a]
+                [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d]
+                [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d]
+                [                0,                 0,           0,             1]])
 
-![alt text][https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/kuka_arm_xacro_urdf.png]
+T2_3 =  Matrix([[           cos(q),           -sin(q),           0,             a]
+                [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d]
+                [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d]
+                [                0,                 0,           0,             1]])
+
+T3_4 =  Matrix([[           cos(q),           -sin(q),           0,             a]
+                [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d]
+                [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d]
+                [                0,                 0,           0,             1]])
+                
+T4_5 =  Matrix([[           cos(q),           -sin(q),           0,             a]
+                [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d]
+                [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d]
+                [                0,                 0,           0,             1]])
+     
+T5_6 =  Matrix([[           cos(q),           -sin(q),           0,             a]
+                [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d]
+                [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d]
+                [                0,                 0,           0,             1]])
 
 
 6. Fill in the `IK_server.py` with your Inverse Kinematics code. 
