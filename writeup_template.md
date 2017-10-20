@@ -54,10 +54,53 @@ The generalized homogeneous transform between base_link and gripper_link using o
 
     T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 
-Before define each rotation matrix, I have reviewed the concept by watching from www.khanacademy.org.
+Before define each rotation matrix, I have reviewed the basic concept by watching some classes from www.khanacademy.org.
 See some examples on these screenshots:
+https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/Rotation%20in%20R2.png
+https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/Rotation%20in%20R3.png
+
+Now, it's clear to me how to get the new vector after its rotation according given theta angle. (Forward Kinematics)
+
+Then, here we have each rotation matrix:
+
+    r, p, y = symbols('r p y')
+
+    ROT_x = Matrix([[       1,      0,       0]
+                    [       0, cos(r), -sin(r)]
+                    [       0, sin(r),  cos(r)]]) # ROW
 
 
+    ROT_y = Matrix([[  cos(p),      0,  sin(p)]
+                    [       0,      1,       0]
+                    [ -sin(p),      0,  cos(p)]]) #PITCH
+
+    ROT_z = Matrix([[  cos(y), -sin(y),      0]
+                    [  sin(y),  cos(y),      0]
+                    [       0,       0,      1]]) # YAW
+                    
+                    
+                    
+Considering there is a distance of 0.303m between WC and EE (End-Effector):
+
+    ROT_EE = ROT_z * ROT_y * ROT_x
+    
+    ROT_Error = ROT_z.subs(y,radians(180)*ROT_y.subs(p,radians(-90)))
+
+    ROT_EE = ROT_EE * ROT_Error       ===>>>> product = translation
+
+    ROT_EE =  ROT_EE.subs({'r': roll, 'p': pitch, 'y': yaw})
+
+    EE = Matrix ([[px],
+                  [py],
+                  [pz]])
+
+    WC = EE - 0.303 * ROT_EE[:,2]     ====>>>          WC = ([[px], -  ( 0.303 * ROT_ EE[:,2])  => EE transladed by 0.303m  
+                                                              [py],
+                                                              [pz]])
+                                                              
+                                                              
+
+    
 
 6. Fill in the `IK_server.py` with your Inverse Kinematics code. 
 
