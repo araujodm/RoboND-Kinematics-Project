@@ -54,6 +54,9 @@ The generalized homogeneous transform between base_link and gripper_link using o
 
     T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 
+Before define each rotation matrix, I have reviewed the concept by watching from www.khanacademy.org.
+See some examples on these screenshots:
+
 
 
 6. Fill in the `IK_server.py` with your Inverse Kinematics code. 
