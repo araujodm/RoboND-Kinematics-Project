@@ -34,6 +34,27 @@ https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/D
 Here a screenshot from the urdf file:
 https://github.com/araujodm/RoboND-Kinematics-Project/blob/patch-1/misc_images/kuka_arm_xacro_urdf.png
 
+Here the individual transformation matrices about each joint:
+
+
+        TF =  Matrix([[           cos(q),           -sin(q),           0,             a]
+                      [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d]
+                      [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d]
+                      [                0,                 0,           0,             1]])
+
+    T0_1 = TF_Matrix(alpha0, a0, d1, q1)
+    T1_2 = TF_Matrix(alpha1, a1, d2, q2)
+    T2_3 = TF_Matrix(alpha2, a2, d3, q3)
+    T3_4 = TF_Matrix(alpha3, a3, d4, q4)
+    T4_5 = TF_Matrix(alpha4, a4, d5, q5)
+    T5_6 = TF_Matrix(alpha5, a5, d6, q6)
+    T6_EE = TF_Matrix(alpha6, a6, d7, q7)
+
+The generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose is:
+
+    T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
+
+
 
 6. Fill in the `IK_server.py` with your Inverse Kinematics code. 
 
