@@ -36,7 +36,7 @@ def handle_calculate_IK(req):
 	#   
 	### Create Modified DH parameters (DH_Table)
 	s = {alpha0:     0, a0:      0, d1:      0.75, q1:          q1,
-         alpha1: -pi/2, a1:   0.35, d2:         0, q2:  q2-pi/2+q2,
+         alpha1: -pi/2, a1:   0.35, d2:         0, q2:    -pi/2+q2,
          alpha2:     0, a2:   1.25, d3:         0, q3:          q3,
          alpha3: -pi/2, a3: -0.054, d4:       1.5, q4:          q4,
          alpha4:  pi/2, a4:      0, d5:         0, q5:          q5,
@@ -92,7 +92,7 @@ def handle_calculate_IK(req):
     ROT_EE = ROT_z * ROT_y * ROT_x
 
     
-    ROT_Error = ROT_z.subs(y,radians(180)*ROT_Y.subs(p,radians(-90)))
+    ROT_Error = ROT_z.subs(y,radians(180)*ROT_y.subs(p,radians(-90)))
 
     ROT_EE = ROT_EE * ROT_Error
 
@@ -150,7 +150,7 @@ def handle_calculate_IK(req):
 
         # EULER ANGLES from rotation matrix
 
-        theta4 = atan2(R3_6[2,2], -R_6[0, 2])
+        theta4 = atan2(R3_6[2,2], -R3_6[0, 2])
         theta5 = atan2(sqrt(R3_6[0, 2]*R3_6[0, 2] + R3_6[2, 2]* R3_6[2, 2]), R3_6[1.25])
         theta6 = atan2( -R3_6[1, 1], R3_6[1, 0])
 	    #
